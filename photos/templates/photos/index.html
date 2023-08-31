@@ -1,0 +1,35 @@
+{% extends 'photos/base.html' %}
+
+{% block heading %}
+    <title>Photo Blogs</title>
+    <!-- cdn fontawesome -->
+    <script src="https://kit.fontawesome.com/d5b5e10b1b.js" crossorigin="anonymous"></script>
+    <!-- cdn fonts google  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital@0;1&family=Exo+2:wght@500&family=Exo:ital@0;1&family=Saira+Condensed&family=Signika+Negative&display=swap" rel="stylesheet">{% endblock %}
+
+{% block content %}
+<div class="nav">
+    <h1>Gallery <i class="fa-solid fa-images"></i></h1>
+    <li>
+        <a href="/"><ul>Auth</ul></a>
+        <a href="/"><ul>Date</ul></a>
+        <a href="/"><ul>Title</ul></a>
+    </li>
+</div>    
+<div class="container">
+    <div class="card">
+        {% for i in post %}
+            <div class="card-post">
+                <img id="img-post" src="{{ i.post_img.url }}" alt="">
+                <h3 class="post-title">{{ i.post_header }}</h3>
+                <p class="description">{{ i.post_content }}</p>
+                <p class="date">{{ i.post_date }}</p>
+                <p class="auth"><a href="#">{{ i.post_auth }}</a></p>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for i in post %}
+    <div class="card">
+        <div class="block">
+            <img src="" alt="">
+            <!-- <img src='{{ i.post_img }}'> -->
+            <h4><i class="fa-solid fa-user-tie"></i>  {{ i.post_auth }}</h4>
+            <h2>{{ i.post_header }}</h2>
+            <p>{{ i.post_content }}</p>
+            <p id="date">{{ i.post_date|date:'d.m.Y, H.i.s' }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>
